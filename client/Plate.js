@@ -5,7 +5,6 @@ export default class Plate {
     constructor(options = {}) {
         const graphics = new PIXI.Graphics();
         graphics.beginFill(0xffd900);
-        //graphics.lineStyle(1, 0xffd900, 1);
         graphics.drawRect(0, 0, options.width, options.height);
         graphics.endFill();
 
@@ -26,11 +25,6 @@ export default class Plate {
         });
 
         this.body.addShape(shape);
-    }
-
-    addTo(stage, world) {
-        stage.addChild(this.sprite);
-        world.addBody(this.body);
     }
 
     update() {

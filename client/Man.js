@@ -5,7 +5,6 @@ export default class Man {
     constructor(options = {}) {
         const graphics = new PIXI.Graphics();
         graphics.beginFill(0x000000);
-        //graphics.lineStyle(1, 0x000000, 1);
         graphics.drawRect(0, 0, 10, 25);
         graphics.endFill();
 
@@ -25,20 +24,14 @@ export default class Man {
         });
 
         const shape = new p2.Box({
-            width: options.width,
-            height: options.height
+            width: 10,
+            height: 25
         });
 
         this.body.addShape(shape);
     }
 
-    addTo(stage, world) {
-        stage.addChild(this.sprite);
-        world.addBody(this.body);
-    }
-
     update() {
-        console.log(this.body.position[0], this.body.position[1]);
         this.sprite.x = this.body.position[0];
         this.sprite.y = -this.body.position[1];
     }
